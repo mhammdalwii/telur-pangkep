@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('egg_batches', function (Blueprint $table) {
             $table->id();
+            $table->string('batch_code')->unique(); // Kode Unik
+            $table->foreignId('farm_id')->constrained()->cascadeOnDelete();
+            $table->date('production_date');
+            $table->integer('quantity');
+            $table->string('quality'); // misal: 'Grade A', 'Grade B'
+            $table->string('coop_origin')->nullable(); // Asal kandang
+            $table->string('status')->default('Di Peternakan');
             $table->timestamps();
         });
     }

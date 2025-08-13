@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     {{-- Judul Halaman --}}
-    <title>Telur Pangkep - Lacak Rantai Pasok & Harga Pasar</title>
+    <title>Ayam Pangkep - Lacak Rantai Pasok & Harga Pasar</title>
 
     {{-- Deskripsi untuk SEO --}}
     <meta name="description"
@@ -22,8 +22,8 @@
     <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
         <div class="container mx-auto px-6 py-4 flex justify-between items-center">
             <a href="{{ route('home') }}" class="flex items-center gap-3">
-                <span class="text-2xl" role="img" aria-label="egg">🥚</span>
-                <span class="text-xl font-bold text-gray-900">Telur Pangkep</span>
+                <span class="text-2xl" role="img" aria-label="egg">🐔</span>
+                <span class="text-xl font-bold text-gray-900">Ayam Pangkep</span>
             </a>
             <nav class="flex items-center gap-4">
                 <a href="{{ route('home') }}" class="text-gray-600 hover:text-green-600 font-medium">Beranda</a>
@@ -41,10 +41,10 @@
         <section class="py-20 md:py-28 text-center bg-white">
             <div class="container mx-auto px-6">
                 <h1 class="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
-                    Lacak Asal-usul Telur Anda
+                    Lacak Asal-usul Ayam Anda
                 </h1>
                 <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                    Masukkan kode unik pada kemasan untuk melihat riwayat lengkap telur, dari peternakan hingga ke
+                    Masukkan kode unik pada kemasan untuk melihat riwayat lengkap Ayam, dari peternakan hingga ke
                     tangan Anda.
                 </p>
                 <form action="#" method="POST" class="mt-10 max-w-xl mx-auto flex shadow-lg">
