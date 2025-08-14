@@ -78,7 +78,7 @@ class PanenResource extends Resource
 
                 Tables\Columns\TextColumn::make('jumlah_ayam')
                     ->label('Jumlah')
-                    ->suffix(' ekor') // Tambahkan akhiran 'ekor'
+                    ->suffix(' ekor')
                     ->sortable(),
 
                 Tables\Columns\TextColumn::make('jenis_produk')
@@ -103,9 +103,8 @@ class PanenResource extends Resource
                     ->label('Cetak Label')
                     ->icon('heroicon-o-printer')
                     ->color('info')
-                // Arahkan ke route yang akan kita buat nanti
-                // ->url(fn (Panen $record): string => route('panen.label.pdf', $record))
-                // ->openUrlInNewTab(),
+                    ->url(fn(Panen $record): string => route('panen.label.pdf', $record))
+                    ->openUrlInNewTab(),
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

@@ -3,9 +3,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Label Batch {{ $eggBatch->batch_code }}</title>
+    <title>Label Batch {{ $panen->batch_code }}</title>
     <style>
-        /* Gaya CSS sederhana untuk PDF */
         body {
             font-family: 'Helvetica', sans-serif;
             text-align: center;
@@ -35,16 +34,16 @@
 
 <body>
     <div class="label-container">
-        <h1>Telur Pangkep</h1>
-        <p><strong>Kode Batch:</strong> {{ $eggBatch->batch_code }}</p>
-        <p><strong>Tgl. Produksi:</strong> {{ $eggBatch->production_date->format('d M Y') }}</p>
-        <p><strong>Kualitas:</strong> {{ $eggBatch->quality }}</p>
+        <h1>Ayam Pangkep</h1>
+        <p><strong>Kode Batch:</strong> {{ $panen->batch_code }}</p>
+        <p><strong>Tgl. Panen:</strong> {{ \Carbon\Carbon::parse($panen->tanggal_panen)->format('d M Y') }}</p>
+        <p><strong>Jenis:</strong> {{ $panen->jenis_produk }}</p>
         <div class="qr-code">
-            {{-- Di sini kita akan generate QR Code --}}
-            {!! QrCode::size(150)->generate(route('home')) !!}
-            {{-- Untuk sementara, QR Code mengarah ke halaman utama --}}
+            <p><strong>Scan QR Code untuk lacak:</strong></p>
+            {{-- URL di bawah ini bisa diganti ke halaman tracking publik nanti --}}
+            {!! QrCode::size(150)->generate(url('/lacak/' . $panen->batch_code)) !!}
         </div>
-        <p style="margin-top: 15px; font-size: 12px;">Lacak di telur-pangkep.com</p>
+        <p style="margin-top: 15px; font-size: 12px;">Lacak di website kami</p>
     </div>
 </body>
 

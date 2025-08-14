@@ -22,6 +22,7 @@ use App\Filament\Resources\ChartResource\Widgets\PriceChart;
 use Filament\Navigation\NavigationItem;
 use App\Filament\Peternak\Resources\PanenResource;
 use Filament\Navigation\NavigationBuilder;
+use App\Filament\Peternak\Resources\PermintaanResource;
 
 
 class PeternakPanelProvider extends PanelProvider
@@ -83,7 +84,8 @@ class PeternakPanelProvider extends PanelProvider
 
                     NavigationItem::make('Permintaan')
                         ->icon('heroicon-o-shopping-cart')
-                        ->url('#'),
+                        ->isActiveWhen(fn(): bool => request()->routeIs('filament.peternak.resources.permintaans.*'))
+                        ->url(fn(): string => PermintaanResource::getUrl()),
                 ]);
             });
     }
